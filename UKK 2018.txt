@@ -1,0 +1,36 @@
+CREATE DATABASE ukk_2018
+
+CREATE TABLE petugas(
+    id varchar(15) NOT null,
+    nama_depan varchar(30) not null,
+    nama_belakang varchar(30) NOT NULL,
+    password varchar(30) NOT NULL,
+    hak varchar(6) NOT NULL);
+
+CREATE TABLE surat_masuk(
+    no_agenda varchar(15) NOT NULL,
+    id varchar(15) NOT NULL,
+    jenis_surat varchar(30) NOT NULL,
+    tanggal_kirim varchar(15) NOT NULL,
+    tanggal_terima varchar(15) NOT NULL,
+    no_surat varchar(15) NOT NULL,
+    pengirim varchar(30) NOT NULL,
+    perihal varchar(30));
+
+CREATE TABLE surat_keluar(
+    no_agenda varchar(15) NOT NULL,
+    id varchar(15) NOT NULL,
+    jenis_surat varchar(30) NOT NULL,
+    tanggal_kirim varchar(15) NOT NULL,
+    no_surat varchar(15) NOT NULL,
+    pengirim varchar(30) NOT NULL,
+    perihal varchar(30) NOT NULL);
+
+CREATE TABLE disposisi(
+    no_disposisi varchar(16) NOT NULL PRIMARY KEY,
+    no_agenda varchar(15) NOT NULL,
+    no_surat varchar(15) NOT NULL,
+    kepada varchar(30) NOT NULL,
+    keterangan varchar(30) NOT NULL,
+    status_surat varchar(15) NOT NULL,
+    tanggapan varchar(10) NOT NULL);
